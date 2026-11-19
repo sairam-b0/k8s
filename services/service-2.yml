@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalacer-service
+  labels:
+    name: loadbalacer-service
+    app: proxy-serverx
+    author: sai
+
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+
+      port: 80
+      targetPort: 8080
+  selector:
+    app: proxy-server

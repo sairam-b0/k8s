@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache2
+  labels:
+    created_by: sai
+
+spec:
+  containers:
+    - name: apache2
+      image: nginx:latest

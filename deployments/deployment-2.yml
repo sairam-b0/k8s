@@ -1,0 +1,25 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache2
+  labels:
+    name: apache2
+    created_by: sai
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: apache2
+  template:
+    metadata:
+      labels:
+        name: apache2
+    spec:
+      containers:
+        - name: apache2
+          image: httpd
+          ports:
+            - containerPort: 80

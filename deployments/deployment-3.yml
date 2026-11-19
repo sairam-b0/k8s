@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+  labels:
+    name: tomcat
+    author: sai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: tomcat
+    
+  template:
+    metadata:
+       labels:
+        name: tomcat
+    spec:
+      containers:
+        - name: tomcat
+          image: tomee

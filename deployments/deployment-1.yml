@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-server
+  namespace: test-ns
+  labels:
+    name: nginx-server
+    app: proxy-server
+    author: sai
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      name: nginx-server
+  
+  template:
+    metadata:
+      labels:
+        name: nginx-server
+
+    spec:
+      containers:
+        - name: nginx-server
+          image: nginx:latest
+...

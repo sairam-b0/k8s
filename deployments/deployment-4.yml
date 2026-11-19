@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n-app
+  labels:
+    name: n8n-app
+    author: sai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: n8n-app
+  template:
+    metadata:
+      labels:
+        name: n8n-app
+
+    spec:
+      containers:
+        - name: n8n-app
+          image: n8nio/n8n
