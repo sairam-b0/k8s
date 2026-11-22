@@ -4,7 +4,7 @@ metadata:
   name: loadbalacer-service
   labels:
     name: loadbalacer-service
-    app: proxy-serverx
+    app: proxy-server
     author: sai
 
 spec:
