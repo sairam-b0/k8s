@@ -3,9 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-server
-  namespace: test-ns
   labels:
-    name: nginx-server
     app: proxy-server
     author: sai
 
@@ -14,15 +12,17 @@ spec:
 
   selector:
     matchLabels:
-      name: nginx-server
+      app: proxy-server
   
   template:
     metadata:
       labels:
-        name: nginx-server
+        app: proxy-server
 
     spec:
       containers:
-        - name: nginx-server
-          image: nginx:latest
+      - name: nginx-server
+        image: nginx:latest
+        ports:
+        - containerPort: 80
 ...

@@ -1,5 +1,4 @@
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,7 +18,8 @@ spec:
         name: apache2
     spec:
       containers:
-        - name: apache2
-          image: httpd
-          ports:
-            - containerPort: 80
+      - name: apache2
+        image: httpd
+        ports:
+        - containerPort: 80
+...
